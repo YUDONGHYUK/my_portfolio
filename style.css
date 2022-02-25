@@ -379,6 +379,10 @@ p {
   background-color: var(--color-light-white);
 }
 
+.project.invisible {
+  display: none;
+}
+
 .project__img {
   width: 100%;
   height: 100%;
