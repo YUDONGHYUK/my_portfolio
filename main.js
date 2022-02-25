@@ -51,17 +51,28 @@ arrowUpBtn.addEventListener("click", () => {
   scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
 
-// Project filtering
+// Project filtering, Remove selection and select the new one
 const workBtnContainer = document.querySelector(".work__categories");
 const projectList = document.querySelectorAll(".project");
+const categoryBtns = document.querySelectorAll(".category__btn");
+
 workBtnContainer.addEventListener("click", (event) => {
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  // Project filtering
   projectList.forEach((project) => {
     if (filter === "all" || filter === project.dataset.type) {
       project.classList.remove("invisible");
     } else {
       project.classList.add("invisible");
+    }
+  });
+  // Remove selection and select the new one
+  categoryBtns.forEach((categoryBtn) => {
+    if (filter === categoryBtn.dataset.filter) {
+      categoryBtn.classList.add("active");
+    } else {
+      categoryBtn.classList.remove("active");
     }
   });
 });
