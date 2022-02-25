@@ -525,16 +525,22 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    background-color: var(--color-my-nav);
   }
 
   .navbar__logo {
     padding: 8px 0;
   }
+
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: flex;
   }
 
   .navbar__toggle-btn {
